@@ -11,5 +11,6 @@
     <section>
       %include
     </section>
+    <img src="http://imgs.xkcd.com/comics/exploits_of_a_mom.png" />
   </body>
 </html>
