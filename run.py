@@ -19,7 +19,7 @@ def server_static(filename):
 
 @route('/')
 def index():
-    data = cur.execute('select * from students').fetchall()
+    data = cur.executescript("select * from students WHERE f_name = '' OR '1'='1'").fetchall()
     return template('templates/home.tpl', data=data)
 
 
@@ -33,15 +33,18 @@ def addstudent():
 
 @post('/added')
 def added():
-    ext_data = []
-    column_data = request.forms
-    for key in cur.description:
-        ext_data.append(column_data[key[0]])
-    cmd = "insert into students values ('%s', '%s', '%s', '%s')" % tuple(ext_data)
-    cur.execute(cmd)
-    new_id = cur.lastrowid
-    sqlite3.connect("students.db").commit()
-    cur.close
+    try:
+        ext_data = []
+        column_data = request.forms
+        for key in cur.description:
+            ext_data.append(column_data[key[0]])
+        cmd = "insert into students values ('%s', '%s', '%s', '%s')" % tuple(ext_data)
+        cur.executescript(cmd)
+        new_id = cur.lastrowid
+        sqlite3.connect("students.db").commit()
+        cur.close
+    except:
+        print "error"
     return index()
 
 run(host='localhost', port=8080, debug=True)

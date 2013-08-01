@@ -2,9 +2,6 @@ body {
     margin: 25px;
     padding: 25px;
 }
-section {
-    border: 1px dotted #555;
-}
 section p {
     padding: 25px;
 }
@@ -34,4 +31,17 @@ form.buttons {
 footer {
     margin-top: 25px;
     text-align: center;
+}
+html {
+  background-color: #FFD;
+}
+section {
+  border-radius: 25px;
+  border: 1px solid #888;
+  padding-left: 15px;
+  background-color: #DDE;
+  text-align: left;
+}
+body {
+  text-align: center;
 }
