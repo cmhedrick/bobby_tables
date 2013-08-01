@@ -3,7 +3,7 @@
 <p>Please Fillout student information</p>
 <form method="post" action="/added">
   %for column in column_list:
-    <label>{{column}} <input name="{{column}}" type="text"></label>
+    <label>{{column}} <input name="{{column}}" type="text" style="width:  500px;"></label>
   %end
   <button type="submit">Submit</button>
 </form>
