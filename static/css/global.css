@@ -1,0 +1,37 @@
+body {
+    margin: 25px;
+    padding: 25px;
+}
+section {
+    border: 1px dotted #555;
+}
+section p {
+    padding: 25px;
+}
+section p.bigmessage {
+    font-size: 3em;
+    text-align: center;
+    font-weight: bold;
+}
+section h1 {
+    text-align: center;
+}
+a, a:visited {
+    color: #663;
+    text-decoration: none;
+}
+th, td {
+    text-align: left;
+    padding: 10px;
+}
+label {
+    display: block;
+    margin: 15px;
+}
+form.buttons {
+    text-align: center;
+}
+footer {
+    margin-top: 25px;
+    text-align: center;
+}
