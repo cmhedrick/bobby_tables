@@ -19,7 +19,7 @@ def server_static(filename):
 
 @route('/')
 def index():
-    data = cur.executescript("select * from students WHERE f_name = '' OR '1'='1'").fetchall()
+    data = cur.execute("select * from students WHERE f_name = '' OR '1'='1';").fetchall()
     return template('templates/home.tpl', data=data)
 
 
@@ -44,7 +44,7 @@ def added():
         sqlite3.connect("students.db").commit()
         cur.close
     except:
-        print "error"
+        print("error")
     return index()
 
-run(host='localhost', port=8080, debug=True)
+run(host='localhost', port=8000, debug=True)
